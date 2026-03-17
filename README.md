@@ -5,7 +5,8 @@
 ### 1.1 Project Vision
 **War Galley** is a high-fidelity (Unity Engine), authoritative-server naval simulation designed to model the tactical and strategic complexities of Mediterranean warfare (480 BC – 250 BC). It balances historical rigor with modern cybersecurity standards (FIPS 140-2, NIST).  
 
-**1st-person command and 3rd-person** tactical management of ancient Mediterranean fleets. The game is based on the rule from https://www.gmtgames.com/living_rules/WG%20rules-2006.pdf.
+**1st-person command and 3rd-person** tactical management of ancient Mediterranean fleets. 
+The game is based on the rule from **https://www.gmtgames.com/living_rules/WG%20rules-2006.pdf**. 
 
 ### 1.2 Functional Requirements (FR)
 | ID | Requirement | Description |
