@@ -3,7 +3,7 @@
 ## 1. Product Requirements Document (PRD)
 
 ### 1.1 Project Vision
-**War Galley** is a high-fidelity, authoritative-server naval simulation designed to model the tactical and strategic complexities of Mediterranean warfare (480 BC – 250 BC). It balances historical rigor with modern cybersecurity standards (FIPS 140-2, NIST).
+**War Galley** is a high-fidelity (Unity Engine), authoritative-server naval simulation designed to model the tactical and strategic complexities of Mediterranean warfare (480 BC – 250 BC). It balances historical rigor with modern cybersecurity standards (FIPS 140-2, NIST).
 
 ### 1.2 Functional Requirements (FR)
 | ID | Requirement | Description |
