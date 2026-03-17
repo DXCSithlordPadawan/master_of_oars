@@ -1,0 +1,1 @@
+"""War Galley Engine package."""

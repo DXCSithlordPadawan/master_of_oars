@@ -1,0 +1,100 @@
+{
+  "scenario_id": "ECNOMUS_001",
+  "name": "Battle of Cape Ecnomus",
+  "description": "256 BC — Roman and Carthaginian fleets clash off Sicily. Rome employs the Corvus boarding bridge; Carthage relies on superior speed and seamanship.",
+  "wind": [3.5, 225],
+  "command_radius": 18.0,
+  "vessels": [
+    {
+      "id": 101,
+      "type": "Quinquereme",
+      "side": "Rome",
+      "pos": [5.0, 10.0],
+      "heading": 135,
+      "equipment": ["Corvus"],
+      "crew": {
+        "quality": "Standard",
+        "specialists": ["Keleustes"],
+        "toxotai": 30
+      }
+    },
+    {
+      "id": 102,
+      "type": "Quinquereme",
+      "side": "Rome",
+      "pos": [10.0, 10.0],
+      "heading": 135,
+      "equipment": ["Corvus"],
+      "crew": {
+        "quality": "Standard",
+        "specialists": [],
+        "toxotai": 20
+      }
+    },
+    {
+      "id": 103,
+      "type": "Trireme",
+      "side": "Rome",
+      "pos": [7.5, 5.0],
+      "heading": 135,
+      "equipment": [],
+      "crew": {
+        "quality": "Poor",
+        "specialists": [],
+        "toxotai": 10
+      }
+    },
+    {
+      "id": 201,
+      "type": "Quinquereme",
+      "side": "Carthage",
+      "pos": [40.0, 30.0],
+      "heading": 315,
+      "equipment": [],
+      "crew": {
+        "quality": "Elite",
+        "specialists": ["Kybernetes", "Keleustes"],
+        "toxotai": 15
+      }
+    },
+    {
+      "id": 202,
+      "type": "Quinquereme",
+      "side": "Carthage",
+      "pos": [45.0, 30.0],
+      "heading": 315,
+      "equipment": [],
+      "crew": {
+        "quality": "Elite",
+        "specialists": ["Kybernetes"],
+        "toxotai": 10
+      }
+    },
+    {
+      "id": 203,
+      "type": "Trireme",
+      "side": "Carthage",
+      "pos": [50.0, 35.0],
+      "heading": 270,
+      "equipment": [],
+      "crew": {
+        "quality": "Standard",
+        "specialists": [],
+        "toxotai": 5
+      }
+    },
+    {
+      "id": 204,
+      "type": "Phoenician_Trader",
+      "side": "Carthage",
+      "pos": [60.0, 40.0],
+      "heading": 270,
+      "equipment": [],
+      "crew": {
+        "quality": "Poor",
+        "specialists": [],
+        "toxotai": 0
+      }
+    }
+  ]
+}

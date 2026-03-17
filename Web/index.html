@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>War Galley v1.0 | Admin Console</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>WAR GALLEY: STRATEGIC COMMAND</h1>
+        <div id="security-badge" class="badge-fips">FIPS 140-2 COMPLIANT</div>
+    </header>
+
+    <main>
+        <section id="telemetry-grid">
+            <div class="card">
+                <h3>Fleet Status</h3>
+                <canvas id="fleetChart"></canvas>
+            </div>
+            <div class="card">
+                <h3>Engine Performance</h3>
+                <p>Status: <span id="engine-status">ONLINE</span></p>
+                <p>Latency: <span id="latency">12ms</span></p>
+            </div>
+        </section>
+
+        <section id="security-logs">
+            <h3>Audit Trail (NIST 800-53)</h3>
+            <div id="log-container">
+                </div>
+        </section>
+    </main>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

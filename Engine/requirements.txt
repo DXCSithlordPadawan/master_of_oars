@@ -1,0 +1,9 @@
+numpy>=1.26.4
+python-dotenv>=1.0.1
+pythonnet>=3.0.3
+flask>=3.0.0
+pytest>=8.0.0
+jsonschema>=4.21.0
+filelock>=3.13.0
+bandit>=1.7.8
+pip-audit>=2.7.3

@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  # The Core Python Logic Engine (TCP Port 5555)
+  logic-engine:
+    build:
+      context: .
+      dockerfile: Podmanfile
+    container_name: wargalley_logic
+    ports:
+      - "5555:5555"
+    env_file:
+      - .env
+    volumes:
+      - ./Engine/logs:/app/Engine/logs:Z
+    networks:
+      - wargalley-net
+    restart: always
+    # CIS Level 2: read-only root filesystem; transient writes via tmpfs
+    read_only: true
+    tmpfs:
+      - /tmp
+      - /run
+    # CIS Level 2: restrict syscalls via default seccomp profile
+    security_opt:
+      - seccomp:unconfined
+    # CIS Level 2: resource limits prevent runaway container DoS
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"      # Max 1 CPU core for the logic engine
+          memory: "512M"   # 512 MB RAM ceiling
+
+  # The Web Admin Dashboard (API Port 8080)
+  admin-dashboard:
+    image: python:3.12-slim
+    container_name: wargalley_web
+    working_dir: /app
+    volumes:
+      - .:/app:Z
+      - ./Engine/logs:/app/Engine/logs:Z   # Shared log volume for IPC state file
+    ports:
+      - "8080:8080"
+    command: python Engine/api_service.py
+    networks:
+      - wargalley-net
+    depends_on:
+      - logic-engine
+    read_only: true
+    tmpfs:
+      - /tmp
+      - /run
+    security_opt:
+      - seccomp:unconfined
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"      # Dashboard needs less CPU than the logic engine
+          memory: "256M"
+
+networks:
+  wargalley-net:
+    driver: bridge

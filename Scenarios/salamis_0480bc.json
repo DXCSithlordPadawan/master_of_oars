@@ -1,0 +1,30 @@
+{
+  "scenario_id": "SALAMIS_001",
+  "name": "Battle of Salamis",
+  "wind": [4.5, 180],
+  "vessels": [
+    {
+      "id": 101,
+      "type": "Trireme",
+      "side": "Greece",
+      "pos": [10.5, 20.0],
+      "heading": 90,
+      "crew": {
+        "quality": "Elite",
+        "specialists": ["Kybernetes", "Keleustes"],
+        "toxotai": 15
+      }
+    },
+    {
+      "id": 201,
+      "type": "Phoenician_Trader",
+      "side": "Persia",
+      "pos": [50.0, 25.0],
+      "heading": 270,
+      "crew": {
+        "quality": "Standard",
+        "toxotai": 5
+      }
+    }
+  ]
+}

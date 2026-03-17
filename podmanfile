@@ -1,0 +1,39 @@
+# Use a slim, stable Python base
+FROM python:3.12-slim
+
+# Set security metadata
+LABEL maintainer="Strategist" 
+LABEL version="1.0"
+LABEL security.standard="CIS-Level-2"
+
+# Prevent Python from writing .pyc files and buffering stdout
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
+# Create a non-privileged user (STIG requirement)
+RUN groupadd -r strategy_group && useradd -r -g strategy_group strategy_user
+
+# Install system dependencies for pythonnet
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gcc \
+    libglib2.0-0 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Setup directory structure
+WORKDIR /app
+COPY Engine/requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy logic core
+COPY Engine/ ./Engine/
+COPY Scenarios/ ./Scenarios/
+COPY .env .
+
+# Set ownership and switch to non-root user
+RUN chown -R strategy_user:strategy_group /app
+USER strategy_user
+
+# Expose the Authoritative Bridge port
+EXPOSE 5555
+
+CMD ["python", "Engine/main.py"]
