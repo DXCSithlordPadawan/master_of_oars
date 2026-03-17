@@ -714,46 +714,90 @@ quadrantChart
 
 ```mermaid
 gantt
-    title War Galley v1.0 — Remaining Remediation Roadmap
+    title War Galley v1.0 - Remaining Remediation Roadmap
     dateFormat  YYYY-MM-DD
-    section Sprint 6 — Unity Integration Unblock
-    Create VesselManager.cs                                     :crit, s6a, 2026-03-18, 2d
-    Fix VesselBridge.cs HMAC signing (HMACSHA256 in C#)         :crit, s6b, 2026-03-18, 2d
-    Fix EffectsManager.cs currentSpeed field                    :crit, s6c, 2026-03-18, 1d
-    Fix NavalInputManager.cs mp_used cast to int                :crit, s6d, 2026-03-18, 1d
-    Test C# compilation in Unity 2023.x editor                  :crit, s6e, 2026-03-20, 2d
-    Create Unity Prefabs (Vessel, HUD, CommandPulse)            :s6f, 2026-03-22, 3d
-    Source or generate PBR textures                             :s6g, 2026-03-22, 3d
 
-    section Sprint 7 — Security Hardening
-    Fix seccomp:unconfined in podman-compose.yaml               :crit, s7a, 2026-03-25, 1d
-    Add ADMIN_API_KEY generation to init_project.sh             :crit, s7b, 2026-03-25, 1d
-    Implement dashboard API key injection mechanism             :s7c, 2026-03-25, 2d
-    Add SIGTERM handler to main.py                              :s7d, 2026-03-26, 1d
-    Add test coverage reporting to CI (--cov flag)              :s7e, 2026-03-26, 1d
-    Add secrets scanning (gitleaks) to CI                       :s7f, 2026-03-26, 1d
-    Remove pythonnet if not used or document its purpose        :s7g, 2026-03-27, 1d
-    Fix material_manifest_generator.py import side-effect       :s7h, 2026-03-27, 1d
+    section Sprint 6 - Unity Integration
+    VesselManager                              :crit, s6a, 2026-03-18, 2d
+    HMAC Fix                                   :crit, s6b, 2026-03-18, 2d
+    Effects Speed Fix                          :crit, s6c, 2026-03-18, 1d
+    MP Cast Fix                                :crit, s6d, 2026-03-18, 1d
+    Unity Compile Test                         :crit, s6e, 2026-03-20, 2d
+    Create Prefabs                             :s6f, 2026-03-22, 3d
+    PBR Textures                               :s6g, 2026-03-22, 3d
 
-    section Sprint 8 — Engine Completeness
-    Implement NavalAI generate_influence_map()                  :s8a, 2026-04-01, 3d
-    Apply AI autonomous action to vessel movement               :s8b, 2026-04-01, 2d
-    Apply Kybernetes arc bonus in calculate_new_pos()           :s8c, 2026-04-01, 1d
-    Apply Carthage MP boost automatically per turn              :s8d, 2026-04-02, 1d
-    Implement probabilistic storm model                         :s8e, 2026-04-02, 2d
-    Add Egypt Ballista scenario JSON                            :s8f, 2026-04-03, 1d
-    Delete superseded Engine/test_war_galley.py                 :s8g, 2026-04-03, 0d
+    section Sprint 7 - Security Hardening
+    Seccomp Fix                                :crit, s7a, 2026-03-25, 1d
+    API Key Gen                                :crit, s7b, 2026-03-25, 1d
+    Dashboard Keys                             :s7c, 2026-03-25, 2d
+    SIGTERM Handler                            :s7d, 2026-03-26, 1d
+    CI Coverage                                :s7e, 2026-03-26, 1d
+    CI Secrets Scan                            :s7f, 2026-03-26, 1d
+    Pythonnet Review                           :s7g, 2026-03-27, 1d
+    Manifest Import Fix                        :s7h, 2026-03-27, 1d
 
-    section Sprint 9 — Documentation & Compliance Polish
-    Update User_Guide.md with Known Limitations section         :s9a, 2026-04-07, 1d
-    Update First_Launch_Checklist for Unity blockers            :s9b, 2026-04-07, 1d
-    Update Github_Tree_Checklist with S4-06/S4-07 notes        :s9c, 2026-04-07, 1d
-    Update Release_Notes.md with accurate feature status        :s9d, 2026-04-07, 1d
-    Update Security_Compliance.md TLS status to v1.1 Planned    :s9e, 2026-04-07, 1d
-    Add command_radius to scenario_schema.json                  :s9f, 2026-04-08, 1d
-    Investigate TLS on TCP socket (v1.1 scoping)                :s9g, 2026-04-08, 2d
+    section Sprint 8 - Engine Completeness
+    Influence Map                              :s8a, 2026-04-01, 3d
+    AI Movement                                :s8b, 2026-04-01, 2d
+    Arc Bonus                                  :s8c, 2026-04-01, 1d
+    Carthage MP                                :s8d, 2026-04-02, 1d
+    Storm Model                                :s8e, 2026-04-02, 2d
+    Ballista JSON                              :s8f, 2026-04-03, 1d
+    Delete Old Test                            :s8g, 2026-04-03, 0d
+
+    section Sprint 9 - Docs & Compliance
+    User Guide                                 :s9a, 2026-04-07, 1d
+    Launch Checklist                           :s9b, 2026-04-07, 1d
+    Tree Checklist                             :s9c, 2026-04-07, 1d
+    Release Notes                              :s9d, 2026-04-07, 1d
+    TLS Status                                 :s9e, 2026-04-07, 1d
+    Schema Update                              :s9f, 2026-04-08, 1d
+    TLS Scoping                                :s9g, 2026-04-08, 2d
 ```
+# Legend — Full Task Names
 
+## Sprint 6 – Unity Integration
+- **VesselManager** — Create `VesselManager.cs`  
+- **HMAC Fix** — Fix `VesselBridge.cs` HMAC signing (HMACSHA256 in C#)  
+- **Effects Speed Fix** — Fix `EffectsManager.cs` `currentSpeed` field  
+- **MP Cast Fix** — Fix `NavalInputManager.cs` `mp_used` cast to int  
+- **Unity Compile Test** — Test C# compilation in Unity 2023.x editor  
+- **Create Prefabs** — Create Unity prefabs (Vessel, HUD, CommandPulse)  
+- **PBR Textures** — Source or generate PBR textures  
+
+---
+
+## Sprint 7 – Security Hardening
+- **Seccomp Fix** — Fix `seccomp:unconfined` in `podman-compose.yaml`  
+- **API Key Gen** — Add `ADMIN_API_KEY` generation to `init_project.sh`  
+- **Dashboard Keys** — Implement dashboard API key injection mechanism  
+- **SIGTERM Handler** — Add SIGTERM handler to `main.py`  
+- **CI Coverage** — Add test coverage reporting to CI (`--cov` flag)  
+- **CI Secrets Scan** — Add secrets scanning (gitleaks) to CI  
+- **Pythonnet Review** — Remove `pythonnet` if not used or document purpose  
+- **Manifest Import Fix** — Fix `material_manifest_generator.py` import side-effect  
+
+---
+
+## Sprint 8 – Engine Completeness
+- **Influence Map** — Implement `NavalAI.generate_influence_map()`  
+- **AI Movement** — Apply AI autonomous action to vessel movement  
+- **Arc Bonus** — Apply Kybernetes arc bonus in `calculate_new_pos()`  
+- **Carthage MP** — Apply Carthage MP boost automatically per turn  
+- **Storm Model** — Implement probabilistic storm model  
+- **Ballista JSON** — Add Egypt Ballista scenario JSON  
+- **Delete Old Test** — Delete superseded `Engine/test_war_galley.py`  
+
+---
+
+## Sprint 9 – Documentation & Compliance
+- **User Guide** — Update `User_Guide.md` with Known Limitations  
+- **Launch Checklist** — Update `First_Launch_Checklist` for Unity blockers  
+- **Tree Checklist** — Update `Github_Tree_Checklist` with S4-06/S4-07 notes  
+- **Release Notes** — Update `Release_Notes.md` with accurate feature status  
+- **TLS Status** — Update `Security_Compliance.md` TLS status to v1.1 Planned  
+- **Schema Update** — Add `command_radius` to `scenario_schema.json`  
+- **TLS Scoping** — Investigate TLS on TCP socket (v1.1 scoping) 
 ---
 
 ## 14. Architecture Coverage Diagram
